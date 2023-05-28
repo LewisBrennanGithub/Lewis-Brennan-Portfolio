@@ -21,16 +21,20 @@ const Aligner = styled.div`
   grid-template-columns: 15% 70% 15%;
   height: 85vh;
 
+  @media only screen and (max-width: 600px){
+    display: flex;
+    flex-direction: column;
+  }
+
 
 .left  {
-  background: #f7f5f0;
+  background: #f5f3f2;
 }
 .middle {
-  background: #F6F1E9;
 }
 
 .right {
-  background: #f7f5f0;
+  background: #f5f3f2;
 }
 `
 

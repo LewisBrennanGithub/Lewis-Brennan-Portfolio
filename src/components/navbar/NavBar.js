@@ -12,8 +12,8 @@ const NavBar = () => {
 
 const NavigationBar = styled.div`
 height: 15vh;
-background: #f7f5f0;
-border-bottom: 1vh solid #ffd129;
+background: #f5f3f2;
+border-bottom: 1vh solid #eba502;
 display: flex;
 align-items: center;
 justify-content: center;

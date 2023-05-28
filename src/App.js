@@ -15,6 +15,7 @@ const Structure = styled.div`
   flex-direction: column;
   margin: 0px;
   font-family: 'Josefin Sans', sans-serif;
+  color: #1B1A17;
 `
 
 export default App;
