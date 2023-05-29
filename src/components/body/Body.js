@@ -96,8 +96,8 @@ align-items: center;
 `
 
 const StyledCardRightColumnPicture = styled.img`
-height: 85%;
-width: 85%;
+height: 50%;
+width: 50%;
 margin-top: 2.5vh;
 border-radius: 50%;
 `
