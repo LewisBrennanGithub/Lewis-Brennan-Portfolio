@@ -1,11 +1,14 @@
 import './App.css';
 import PortfolioContainer from './containers/PortfolioContainer';
+import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 function App() {
   return (
-    <Structure >
-        <PortfolioContainer />
+    <Structure>
+      <Router>
+        <PortfolioContainer/>
+      </Router>
     </Structure>
   );
 }

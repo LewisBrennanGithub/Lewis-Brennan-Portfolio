@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const NavBar = () => {
@@ -5,6 +6,10 @@ const NavBar = () => {
 <NavigationBar>
   <NavigationBarText>Lewis Brennan</NavigationBarText>
   <NavigationBarText>Portfolio Page</NavigationBarText>
+  <NavigationLinks>
+        <StyledLink to="/">Home</StyledLink>
+        <StyledLink to="/paint">Paint Page</StyledLink>
+      </NavigationLinks>
 </NavigationBar>
 
    );
@@ -24,6 +29,21 @@ const NavigationBarText = styled.h1`
 text-transform: uppercase;
 font-size: 4vh;
 margin-block: 0.5vh;
+`
+
+const NavigationLinks = styled.div`
+display: flex;
+gap: 15px;  
+`
+
+const StyledLink = styled(Link)`
+text-decoration: none;
+color: inherit;
+transition: color 0.3s;
+
+&:hover {
+  color: #eba502;
+}
 `
  
 export default NavBar;
