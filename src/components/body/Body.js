@@ -30,7 +30,6 @@ const Body = () => {
 
 const CentreGridBody = styled.div`
 background: #f5f3f2;
-padding-inline: 5vw;
 padding-block: 5vh;
 `
 
@@ -50,7 +49,6 @@ const StyledCardBody = styled.div`
 display: flex;
 flex-direction: row;
 align-items: flex-end;
-padding: 2.5vh 2.5vw; 
 justify-content: center;
 
 @media only screen and (max-width: 900px){
@@ -62,8 +60,7 @@ justify-content: center;
 const StyledLeftColumn = styled.div`
 display: flex;
 flex-direction: column;
-max-width: 25vw;
-padding-inline: 0vw 1vw;
+margin-right: 0.5vw;
 
 @media only screen and (max-width: 900px){
   max-width: 100%;
@@ -77,8 +74,8 @@ const StyledCardLeftColumnText = styled.p`
 const StyledRightColumn = styled.div`
 display: flex;
 flex-direction: column;
-max-width: 25vw;
-padding-inline: 1vw 0vw;
+margin-left: 0.5vw;
+
 
 @media only screen and (max-width: 900px){
   max-width: 100%;
