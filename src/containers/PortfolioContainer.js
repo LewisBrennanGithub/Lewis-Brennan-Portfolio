@@ -23,23 +23,56 @@ const PortfolioContainer = () => {
     navigate(routes[newIndex]);
 }
 
+const pages = [
+  {
+    path: '/',
+    component: <Body />,
+    name: 'Home',
+    color: '#f5f3f2', // for example
+    background: '#eba502',
+  },
+  {
+    path: '/lilypad',
+    component: <LilypadPage />,
+    name: 'Lilypad',
+    color: 'red', // adjust accordingly
+    background: '#84db2c',
+  },
+  {
+    path: '/paint',
+    component: <PaintPage />,
+    name: 'Paint',
+    color: '#7a015a', // adjust accordingly
+    background: '#d92f00',
+  }
+];
+
+const leftPageName = pages[(currentIndex - 1 + pages.length) % pages.length].name;
+const rightPageName = pages[(currentIndex + 1) % pages.length].name;
+
+const leftPageColor = pages[(currentIndex - 1 + pages.length) % pages.length].color;
+const rightPageColor = pages[(currentIndex + 1) % pages.length].color;
+
+const leftPageBackground = pages[(currentIndex - 1 + pages.length) % pages.length].background;
+const rightPageBackground = pages[(currentIndex + 1) % pages.length].background;
+
   return ( 
 <>
   <NavBar/>
   <Aligner>
   <div className="left">  
-  <VerticalButtonLeft onClick={() => changePage(-1)}>Left</VerticalButtonLeft>
+  <VerticalButtonLeft color={leftPageColor} background={leftPageBackground} onClick={() => changePage(-1)}>{leftPageName}</VerticalButtonLeft>
 </div>
 <div className="middle">
   <Routes>
-    <Route path="/" element={<Body />} />
-    <Route path="/lilypad" element={<LilypadPage />} />
-    <Route path="/paint" element={<PaintPage />} />
+    {pages.map(page => (
+      <Route key={page.path} path={page.path} element={page.component} />
+    ))}
   </Routes>
-  </div>
-  <div className="right">
-  <VerticalButtonRight onClick={() => changePage(1)}>Right</VerticalButtonRight>
-  </div>
+</div>
+<div className="right">
+  <VerticalButtonRight color={rightPageColor} background={rightPageBackground} onClick={() => changePage(1)}>{rightPageName}</VerticalButtonRight>
+</div>
   </Aligner>
 </>
    );
@@ -50,6 +83,8 @@ const VerticalButtonLeft = styled.button`
   text-orientation: upright; 
   border: none;
   margin-right: 1vw;
+  color: ${props => props.color}; 
+  background: ${props => props.background};
 `;
 
 const VerticalButtonRight = styled.button`
@@ -57,6 +92,8 @@ const VerticalButtonRight = styled.button`
   text-orientation: upright; 
   border: none;
   margin-left: 1vw;
+  color: ${props => props.color};
+  background: ${props => props.background};
 `;
 
 const Aligner = styled.div`

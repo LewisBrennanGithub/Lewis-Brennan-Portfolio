@@ -8,7 +8,8 @@ const NavBar = () => {
   <NavigationBarText>Portfolio Page</NavigationBarText>
   <NavigationLinks>
         <StyledLink to="/">Home</StyledLink>
-        <StyledLink to="/paint">Paint Page</StyledLink>
+        <StyledLink to="/paint">Paint</StyledLink>
+        <StyledLink to="/lilypad">Lilypad</StyledLink>
       </NavigationLinks>
 </NavigationBar>
 
