@@ -3,13 +3,14 @@ import { useState, useEffect  } from 'react';
 import '../styles/GlobalStyles.css';
 import styled from 'styled-components';
 import NavBar from '../components/navbar/NavBar';
-import Body from '../components/body/Body';
+import HomePage from '../components/body/HomePage';
 import PaintPage from '../components/body/PaintPage';
 import LilypadPage from '../components/body/LilypadPage';
+import VideoDemonstrationPage from '../components/body/VideoDemonstrationPage';
 
 const PortfolioContainer = () => {
   const navigate = useNavigate();
-  const routes = ['/', '/lilypad', '/paint'];
+  const routes = ['/', '/lilypad', '/paint', '/videos'];
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
@@ -27,7 +28,7 @@ const PortfolioContainer = () => {
 const pages = [
   {
     path: '/',
-    component: <Body />,
+    component: <HomePage />,
     name: 'Home',
     color: '#eba502',
     background: '#f5f3f2',
@@ -47,6 +48,14 @@ const pages = [
     color: '#7a015a',
     background: '#f5f3f2',
     'font-family': 'Calistoga',
+  },
+  {
+    path: '/videos',
+    component: <VideoDemonstrationPage />,
+    name: 'Videos',
+    // color: '#7a015a',
+    background: '#f5f3f2',
+    // 'font-family': 'Calistoga',
   }
 ];
 
@@ -84,38 +93,11 @@ const rightPageFontFamily = pages[(currentIndex + 1) % pages.length]['font-famil
    );
 }
 
-// const Aligner = styled.div`
-//   display: grid;
-//   grid-template-columns: 25% 50% 25%;
-
-//   @media only screen and (max-width: 900px){
-//     display: flex;
-//     flex-direction: column;
-//   }
-
-// .left  {
-//     background: #f5f3f2;
-//     display: flex;
-//     align-items: center;
-//     justify-content: flex-end;
-// }
-// .middle {
-//   display: flex;
-// }
-// .right {
-//   background: #f5f3f2;
-//   display: flex;
-//   align-items: center;
-//   justify-content: flex-start;
-// }
-// `
-
 const Aligner = styled.div`
   display: flex;
 
   .left, .middle, .right {
     display: flex;
-    flex: 1;
     flex-direction: column;
     background: #f5f3f2;
   }
@@ -126,10 +108,12 @@ const Aligner = styled.div`
 
   .left{
     align-items: flex-end;
+    flex: 1;
   }
 
   .right{
     align-items: flex-start;
+    flex: 1;
   }
 `
 
