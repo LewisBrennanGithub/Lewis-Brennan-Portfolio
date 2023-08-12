@@ -38,15 +38,15 @@ const pages = [
     path: '/paint',
     component: <PaintPage />,
     name: 'Paint',
-    color: '#7a015a',
+    color: '#d92f00',
     background: '#f5f3f2',
-    'font-family': 'Calistoga',
+    'font-family': 'Raleway',
   },
   {
     path: '/lilypad',
     component: <LilypadPage />,
     name: 'Lilypad',
-    color: 'red',
+    color: '#84db2c',
     background: '#f5f3f2',
     'font-family': 'Bungee',
   },
@@ -54,17 +54,17 @@ const pages = [
     path: '/booter',
     component: <BooterPage />,
     name: 'Booter',
-    color: '#7a015a',
+    color: '#068DA9',
     background: '#f5f3f2',
-    'font-family': 'Calistoga',
+    'font-family': 'Bungee',
   },
   {
     path: '/videos',
     component: <VideoDemonstrationPage />,
     name: 'Videos',
-    // color: '#7a015a',
+    color: '#7a015a',
     background: '#f5f3f2',
-    // 'font-family': 'Calistoga',
+    'font-family': 'Righteous',
   },
 ];
 
@@ -118,16 +118,16 @@ const Aligner = styled.div`
 
   .left{
     align-items: flex-end;
-    // flex: 1;
+    flex: 1;
   }
 
   .right{
     align-items: flex-start;
-    // flex: 1;
+    flex: 1;
   }
 `
 
-const VerticalButtonLeft = styled.button`
+const OldVerticalButtonLeft = styled.button`
   writing-mode: vertical-rl; 
   text-orientation: upright; 
   border: none;
@@ -147,7 +147,7 @@ const VerticalButtonLeft = styled.button`
   max-height: 80vh;
 `;
 
-const VerticalButtonRight = styled.button`
+const OldVerticalButtonRight = styled.button`
   writing-mode: vertical-rl; 
   text-orientation: upright; 
   border: none;
@@ -164,6 +164,44 @@ const VerticalButtonRight = styled.button`
   position: sticky;
   top: 10px; // margin from the top, adjust as required
   bottom: 10px; // margin from the bottom, adjust as required
+  max-height: 80vh;
+  
+`;
+
+const VerticalButtonLeft = styled.button`
+  writing-mode: vertical-rl; 
+  text-orientation: upright; 
+  font-size: 4rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  border: none;
+  margin-right: 1vw;
+  color: ${props => props.color}; 
+  background: ${props => props.background};
+  font-family: ${props => props['font-family'] || 'inherit'};
+  flex: 1;
+  position: sticky;
+  max-height: 90vh;
+  top: 20px;
+  bottom: 20px;
+`;
+
+const VerticalButtonRight = styled.button`
+  writing-mode: vertical-rl; 
+  text-orientation: upright; 
+  font-size: 4rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  border: none;
+  margin-left: 1vw;
+  color: ${props => props.color};
+  background: ${props => props.background};
+  font-family: ${props => props['font-family'] || 'inherit'};
+  flex: 1;
+  position: sticky;
+  max-height: 90vh;
+  top: 20px;
+  bottom: 20px;
 `;
 
 export default PortfolioContainer;
