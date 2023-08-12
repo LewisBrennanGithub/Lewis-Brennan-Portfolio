@@ -7,7 +7,7 @@ const HomePage = () => {
     <>
     <CentreGridBody>
     <StyledCard>
-    <StyledCardHeader>Lewis Brennan - Qualified Junior Software Developer </StyledCardHeader>  
+    <StyledCardHeader>Lewis Brennan - Qualified Junior Software Developer</StyledCardHeader>  
     <StyledCardBody>
     <StyledLeftColumn>  
     <StyledCardLeftColumnText>Thank you for taking the time to visit my Portfolio website. I'm currently studying the Professional Software Development course at Code Clan and whilst my learning is on-going this website will not be fully developed. My plan is to display projects I've made in cards similar to this with Github/website links, screenshots, gifs and videos.</StyledCardLeftColumnText>

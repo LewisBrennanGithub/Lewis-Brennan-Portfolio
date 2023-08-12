@@ -6,11 +6,12 @@ import NavBar from '../components/navbar/NavBar';
 import HomePage from '../components/body/HomePage';
 import PaintPage from '../components/body/PaintPage';
 import LilypadPage from '../components/body/LilypadPage';
+import BooterPage from '../components/body/BooterPage';
 import VideoDemonstrationPage from '../components/body/VideoDemonstrationPage';
 
 const PortfolioContainer = () => {
   const navigate = useNavigate();
-  const routes = ['/', '/lilypad', '/paint', '/videos'];
+  const routes = ['/', '/paint', '/lilypad', '/booter', '/videos'];
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
@@ -34,6 +35,14 @@ const pages = [
     background: '#f5f3f2',
   },
   {
+    path: '/paint',
+    component: <PaintPage />,
+    name: 'Paint',
+    color: '#7a015a',
+    background: '#f5f3f2',
+    'font-family': 'Calistoga',
+  },
+  {
     path: '/lilypad',
     component: <LilypadPage />,
     name: 'Lilypad',
@@ -42,9 +51,9 @@ const pages = [
     'font-family': 'Bungee',
   },
   {
-    path: '/paint',
-    component: <PaintPage />,
-    name: 'Paint',
+    path: '/booter',
+    component: <BooterPage />,
+    name: 'Booter',
     color: '#7a015a',
     background: '#f5f3f2',
     'font-family': 'Calistoga',
@@ -56,7 +65,7 @@ const pages = [
     // color: '#7a015a',
     background: '#f5f3f2',
     // 'font-family': 'Calistoga',
-  }
+  },
 ];
 
 const leftPageName = pages[(currentIndex - 1 + pages.length) % pages.length].name;
@@ -95,6 +104,7 @@ const rightPageFontFamily = pages[(currentIndex + 1) % pages.length]['font-famil
 
 const Aligner = styled.div`
   display: flex;
+  min-height: 100vh; // Allow this container to expand to the height of its content.
 
   .left, .middle, .right {
     display: flex;
@@ -103,17 +113,17 @@ const Aligner = styled.div`
   }
 
   .middle {
-    flex: 2; 
+    flex: 5; 
   }
 
   .left{
     align-items: flex-end;
-    flex: 1;
+    // flex: 1;
   }
 
   .right{
     align-items: flex-start;
-    flex: 1;
+    // flex: 1;
   }
 `
 
@@ -131,6 +141,10 @@ const VerticalButtonLeft = styled.button`
   margin-bottom: 20px;
   font-weight: bold;
   text-transform: uppercase;
+  position: sticky;
+  top: 10px; // margin from the top, adjust as required
+  bottom: 10px; // margin from the bottom, adjust as required
+  max-height: 80vh;
 `;
 
 const VerticalButtonRight = styled.button`
@@ -147,6 +161,9 @@ const VerticalButtonRight = styled.button`
   margin-bottom: 20px;
   font-weight: bold;
   text-transform: uppercase;
+  position: sticky;
+  top: 10px; // margin from the top, adjust as required
+  bottom: 10px; // margin from the bottom, adjust as required
 `;
 
 export default PortfolioContainer;

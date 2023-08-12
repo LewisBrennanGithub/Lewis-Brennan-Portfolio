@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import '../../styles/GlobalStyles.css';
 import PaintHomePage from '../../assets/images/Paint/PaintHomePage.png';
 import PaintIndividual from '../../assets/images/Paint/PaintIndividual.png';
 import PaintTopPaints from '../../assets/images/Paint/PaintTopPaints.png';
@@ -8,8 +8,10 @@ import PaintOldVersion from '../../assets/images/Paint/PaintOldVersion.png';
 
 const PaintPage = () => {
     return ( 
-        <GridContainer>
-        <ColumnContent>
+      <>
+      <h3 className='page-header-paint-viewer'>Paint Viewer - Python Project</h3>
+      <div className='grid-container'>
+      <div className='column-content'>
         <p>Paint Viewer was the first project I made at CodeClan. The purpose here was to build a full stack up with full CRUD capability.</p>
         <img src={PaintHomePage} alt="Paint Project Home Page"/>
         <p>The stack we had learned up until this point was Python and Jinja for the client, Psycopg2 for the server and PostgreSQL for the database, managed by Postico. HTML and CSS were also utilised.</p>
@@ -27,30 +29,10 @@ const PaintPage = () => {
         <p>You may note that this is Paint Viewer 2.0. There was a 1.0 version, however my objective was to make a modern looking website. Whilst 1.0 was fun it also had a very exagerated CSS and as such had a gimmicky feel.</p>
         <img src={PaintOldVersion} width="100%" alt="Paint Project Old Design Individual Paint"/>
         <p>Overall I feel that the redesign was worthwhile. The Mondrian grid was implemented during this time and I feel like I refined my CSS sensibilities, whilst it also gave me a chance to experience working with Python again in a limited fashion.</p>
-        </ColumnContent>
-      </GridContainer>
+      </div>
+      </div>
+      </>
      );
 }
-
-const GridContainer = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 2rem; 
-`;
-
-const ColumnContent = styled.div`
-  column-width: 200px; 
-  column-gap: 1.5rem; 
-  overflow: hidden;
-  // height: 100vh;
-
-  img {
-    max-width: 100%;
-    break-inside: avoid; /* This prevents the image from splitting between columns */
-    display: block;
-    margin: 0 auto 1rem; /* Centers the image and gives margin below */
-  }
-`;
-
  
 export default PaintPage;

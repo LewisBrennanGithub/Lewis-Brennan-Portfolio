@@ -1,4 +1,5 @@
-import styled from 'styled-components';
+
+import '../../styles/GlobalStyles.css';
 import LilypadInitialComponentHierarchy from '../../assets/images/Lilypad/LilypadInitialComponentHierarchy.png';
 import LilypadFinalComponentHierarchy from '../../assets/images/Lilypad/LilypadFinalComponentHierarchy.png';
 import LilypadHome from '../../assets/images/Lilypad/LilypadHome.png';
@@ -7,8 +8,8 @@ import LilypadTrelloBoard from '../../assets/images/Lilypad/LilypadTrelloBoard.p
 
 const LilypadPage = () => {
     return ( 
-    <GridContainer>
-        <ColumnContent>
+      <div className='grid-container'>
+      <div className='column-content'>
         <p>Lilypad was the second project I participated in at CodeClan and is notable as it was a group project which took place after our JavaScript module which had a heavy focus on React.</p>
         <p>Our tech stack for this was React for the client, Express for the server and MongoDB for the database to practice with non relational databases.</p>
         <p>After a thorough discussion we settled on making a social media app with the angle that it could be a Facebook clone, but designed with Frogs as theoretical users.</p>
@@ -25,29 +26,9 @@ const LilypadPage = () => {
         <p>After making pull requests from our branches and pulling from Github to the local there would occasionaly be merge conflicts but we worked through these with communication and as such no bugs were introduced into the codebase.</p>
         <img src={LilypadFinalComponentHierarchy} alt="Lilypad Final Component Hierarchy"/>
         <p>As mentioned the component hierarchy diagram was continually updated and above is the final outcome. I felt that this process was useful for keeping on top of the increasing numbers of files we were creating, whilst also making it easier to figure out areas where we could combine and simplify components to limit duplication and make the codebase more steamlined.</p>
-        </ColumnContent>
-    </GridContainer>
+      </div>
+      </div>
      );
 }
-
-const GridContainer = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 2rem; 
-`;
-
-const ColumnContent = styled.div`
-  column-width: 200px; 
-  column-gap: 1.5rem; 
-  overflow: hidden;
-  // height: 100vh;
-
-  img {
-    max-width: 100%;
-    break-inside: avoid; /* This prevents the image from splitting between columns */
-    display: block;
-    margin: 0 auto 1rem; /* Centers the image and gives margin below */
-  }
-`;
  
 export default LilypadPage;

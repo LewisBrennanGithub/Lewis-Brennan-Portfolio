@@ -10,6 +10,7 @@ const NavBar = () => {
         <StyledLink to="/">Home</StyledLink>
         <StyledLink to="/paint">Paint</StyledLink>
         <StyledLink to="/lilypad">Lilypad</StyledLink>
+        <StyledLink to="/booter">Booter</StyledLink>
         <StyledLink to="/videos">Videos</StyledLink>
       </NavigationLinks>
 </NavigationBar>
