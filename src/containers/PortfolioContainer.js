@@ -7,7 +7,6 @@ import HomePage from '../components/body/HomePage';
 import PaintPage from '../components/body/PaintPage';
 import LilypadPage from '../components/body/LilypadPage';
 import BooterPage from '../components/body/BooterPage';
-import VideoDemonstrationPage from '../components/body/VideoDemonstrationPage';
 
 const PortfolioContainer = () => {
   const navigate = useNavigate();
