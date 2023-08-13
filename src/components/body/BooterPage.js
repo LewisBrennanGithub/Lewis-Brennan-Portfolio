@@ -4,7 +4,6 @@ import BooterJavaUnitTesting from '../../assets/images/Booter/BooterJavaUnitTest
 import BooterInsomniaRouteTesting from '../../assets/images/Booter/BooterInsomniaRouteTesting.png';
 import BooterGamePage from '../../assets/images/Booter/BooterGamePage.png';
 import BooterPlayerPage from '../../assets/images/Booter/BooterPlayerPage.png';
-import BooterAddGamePage from '../../assets/images/Booter/BooterAddGamePage.png';
 import github from '../../assets/icons/square-github.svg';
 import youtube from '../../assets/icons/square-youtube.svg';
 import futbol from '../../assets/icons/futbol-regular.svg';
@@ -72,14 +71,5 @@ const BooterPage = () => {
     </>
      );
 }
-
-{/* <div className='image-by-text-div'>
-<div className='image-by-text-div-img'>
-<img src={} alt="Booter - Landing / Game page"/>
-</div>
-<div className='image-by-text-div-text'>
-</div>
-</div> */}
-
 
 export default BooterPage;

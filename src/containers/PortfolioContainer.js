@@ -28,8 +28,6 @@ const PortfolioContainer = () => {
       name: 'Paint',
       color: '#d92f00',
       background: '#f5f3f2',
-      // offsetColor: '#5e2801',
-      // 'font-family': 'Raleway',
     },
     {
       path: '/lilypad',
@@ -38,7 +36,6 @@ const PortfolioContainer = () => {
       color: '#84db2c',
       offsetColor: '#84db2c',
       background: '#f5f3f2',
-      // 'font-family': 'Bungee',
     },
     {
       path: '/booter',
@@ -47,7 +44,6 @@ const PortfolioContainer = () => {
       color: '#068DA9',
       offsetColor: '#d44908',
       background: '#f5f3f2',
-      // 'font-family': 'Josefin Sans',
     },
   ];
 

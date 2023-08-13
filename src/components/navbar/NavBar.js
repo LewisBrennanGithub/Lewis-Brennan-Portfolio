@@ -2,7 +2,6 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import linkedin from '../../assets/icons/linkedin.svg';
 import github from '../../assets/icons/square-github.svg';
-import youtube from '../../assets/icons/square-youtube.svg';
 
 const NavBar = () => {
   return ( 
