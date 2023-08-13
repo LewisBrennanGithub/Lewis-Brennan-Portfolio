@@ -5,11 +5,18 @@ import PaintTopPaints from '../../assets/images/Paint/PaintTopPaints.png';
 import PaintInvertFunction from '../../assets/images/Paint/PaintInvertFunction.png';
 import PaintMondrianGrid from '../../assets/images/Paint/PaintMondrianGrid.png';
 import PaintOldVersion from '../../assets/images/Paint/PaintOldVersion.png';
+import github from '../../assets/icons/square-github.svg';
+import youtube from '../../assets/icons/square-youtube.svg';
 
 const PaintPage = () => {
     return ( 
       <>
-      <h3 className='page-header-paint-viewer'>Paint Viewer - Python Project</h3>
+      <h3 className='page-header-paint-viewer'>Paint Viewer - First CodeClan Project</h3>
+      <div className='icon-group-page'>
+      <a href='https://github.com/LewisBrennanGithub/paint-project' target="_blank"><img src={github} alt="Github" style={{ width: "24px", height: "24px" }}/></a>
+        <h4>Project Links</h4>
+      <a href='https://www.youtube.com/watch?v=2hlkWWijKzo' target="_blank"><img src={youtube} alt="Youtube" style={{ width: "24px", height: "24px" }}/></a>
+      </div>
       <div className='grid-container'>
       <div className='column-content'>
         <p>Paint Viewer was the first project I made at CodeClan. The purpose here was to build a full stack up with full CRUD capability.</p>
@@ -34,7 +41,8 @@ const PaintPage = () => {
         </div>
         <p>You may note that this is Paint Viewer 2.0. There was a 1.0 version, however my objective was to make a modern looking website. Whilst 1.0 was fun it also had a very exagerated CSS and as such had a gimmicky feel.</p>
         <img src={PaintOldVersion} width="100%" alt="Paint Project Old Design Individual Paint"/>
-        <p>Overall I feel that the redesign was worthwhile. The Mondrian grid was implemented during this time and I feel like I refined my CSS sensibilities, whilst it also gave me a chance to experience working with Python again in a limited fashion.</p>
+        <p>As can be seen above the design was vibrant, everything had a border radius and a text shadow. However I was often drawn back to the simplicity of the Piet Mondrian piece I anchored my homepage with and decided to allow for right angles.</p>
+        <p>Overall I feel that the redesign was worthwhile. The Mondrian grid was implemented during this time and I feel like I refined my CSS sensibilities. Furthermore this period also gave me another chance to experience working with Python/Jinja after a month of working with JavaScript/React.</p>
       </div>
       </div>
       </>

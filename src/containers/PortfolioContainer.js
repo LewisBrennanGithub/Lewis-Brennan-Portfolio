@@ -11,8 +11,64 @@ import VideoDemonstrationPage from '../components/body/VideoDemonstrationPage';
 
 const PortfolioContainer = () => {
   const navigate = useNavigate();
-  const routes = ['/', '/paint', '/lilypad', '/booter', '/videos'];
+  const routes = ['/', '/paint', '/lilypad', '/booter',];
+
+  const pages = [
+    {
+      path: '/',
+      component: <HomePage />,
+      name: 'Home',
+      color: '#eba502',
+      offsetColor: '#eba502',
+      background: '#f5f3f2',
+    },
+    {
+      path: '/paint',
+      component: <PaintPage />,
+      name: 'Paint',
+      color: '#d92f00',
+      background: '#f5f3f2',
+      // offsetColor: '#5e2801',
+      // 'font-family': 'Raleway',
+    },
+    {
+      path: '/lilypad',
+      component: <LilypadPage />,
+      name: 'Lilypad',
+      color: '#84db2c',
+      offsetColor: '#84db2c',
+      background: '#f5f3f2',
+      // 'font-family': 'Bungee',
+    },
+    {
+      path: '/booter',
+      component: <BooterPage />,
+      name: 'Booter',
+      color: '#068DA9',
+      offsetColor: '#d44908',
+      background: '#f5f3f2',
+      // 'font-family': 'Josefin Sans',
+    },
+  ];
+
   const [currentIndex, setCurrentIndex] = useState(0);
+  const activePageColor = pages[currentIndex].color;
+  const activePageOffsetColor = pages[currentIndex].offsetColor
+  const activePageFont = pages[currentIndex]['font-family']
+  const activePageBackgroundColor = pages[currentIndex].background
+
+  const leftPageName = pages[(currentIndex - 1 + pages.length) % pages.length].name;
+  const rightPageName = pages[(currentIndex + 1) % pages.length].name;
+
+  const leftPageColor = pages[(currentIndex - 1 + pages.length) % pages.length].color;
+  const rightPageColor = pages[(currentIndex + 1) % pages.length].color;
+
+  const leftPageBackground = pages[(currentIndex - 1 + pages.length) % pages.length].background;
+  const rightPageBackground = pages[(currentIndex + 1) % pages.length].background;
+
+  const leftPageFontFamily = pages[(currentIndex - 1 + pages.length) % pages.length]['font-family'];
+  const rightPageFontFamily = pages[(currentIndex + 1) % pages.length]['font-family'];
+
 
   useEffect(() => {
     navigate(routes[currentIndex]);
@@ -26,66 +82,13 @@ const PortfolioContainer = () => {
     navigate(routes[newIndex]);
 }
 
-const pages = [
-  {
-    path: '/',
-    component: <HomePage />,
-    name: 'Home',
-    color: '#eba502',
-    background: '#f5f3f2',
-  },
-  {
-    path: '/paint',
-    component: <PaintPage />,
-    name: 'Paint',
-    color: '#d92f00',
-    background: '#f5f3f2',
-    'font-family': 'Raleway',
-  },
-  {
-    path: '/lilypad',
-    component: <LilypadPage />,
-    name: 'Lilypad',
-    color: '#84db2c',
-    background: '#f5f3f2',
-    'font-family': 'Bungee',
-  },
-  {
-    path: '/booter',
-    component: <BooterPage />,
-    name: 'Booter',
-    color: '#068DA9',
-    background: '#f5f3f2',
-    'font-family': 'Bungee',
-  },
-  {
-    path: '/videos',
-    component: <VideoDemonstrationPage />,
-    name: 'Videos',
-    color: '#7a015a',
-    background: '#f5f3f2',
-    'font-family': 'Righteous',
-  },
-];
-
-const leftPageName = pages[(currentIndex - 1 + pages.length) % pages.length].name;
-const rightPageName = pages[(currentIndex + 1) % pages.length].name;
-
-const leftPageColor = pages[(currentIndex - 1 + pages.length) % pages.length].color;
-const rightPageColor = pages[(currentIndex + 1) % pages.length].color;
-
-const leftPageBackground = pages[(currentIndex - 1 + pages.length) % pages.length].background;
-const rightPageBackground = pages[(currentIndex + 1) % pages.length].background;
-
-const leftPageFontFamily = pages[(currentIndex - 1 + pages.length) % pages.length]['font-family'];
-const rightPageFontFamily = pages[(currentIndex + 1) % pages.length]['font-family'];
-
   return ( 
 <>
   <NavBar/>
+  <PageTopBorder color={activePageColor} />
   <Aligner>
     <div className="left">  
-      <VerticalButtonLeft color={leftPageColor} background={leftPageBackground} font-family={leftPageFontFamily} onClick={() => changePage(-1)}>{leftPageName}</VerticalButtonLeft>
+      <VerticalButtonLeft color={activePageOffsetColor} background={leftPageBackground} font-family={activePageFont} onClick={() => changePage(-1)}>{leftPageName}</VerticalButtonLeft>
     </div>
     <div className="middle">
       <Routes>
@@ -95,7 +98,7 @@ const rightPageFontFamily = pages[(currentIndex + 1) % pages.length]['font-famil
       </Routes>
     </div>
     <div className="right">
-      <VerticalButtonRight color={rightPageColor} background={rightPageBackground} font-family={rightPageFontFamily} onClick={() => changePage(1)}>{rightPageName}</VerticalButtonRight>
+      <VerticalButtonRight color={activePageOffsetColor} background={rightPageBackground} font-family={activePageFont} onClick={() => changePage(1)}>{rightPageName}</VerticalButtonRight>
     </div>
   </Aligner>
 </>
@@ -127,47 +130,6 @@ const Aligner = styled.div`
   }
 `
 
-const OldVerticalButtonLeft = styled.button`
-  writing-mode: vertical-rl; 
-  text-orientation: upright; 
-  border: none;
-  margin-right: 1vw;
-  color: ${props => props.color}; 
-  background: ${props => props.background};
-  font-family: ${props => props['font-family'] || 'inherit'};
-  flex: 1;
-  font-size: 4rem;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  font-weight: bold;
-  text-transform: uppercase;
-  position: sticky;
-  top: 10px; // margin from the top, adjust as required
-  bottom: 10px; // margin from the bottom, adjust as required
-  max-height: 80vh;
-`;
-
-const OldVerticalButtonRight = styled.button`
-  writing-mode: vertical-rl; 
-  text-orientation: upright; 
-  border: none;
-  margin-left: 1vw;
-  color: ${props => props.color};
-  background: ${props => props.background};
-  font-family: ${props => props['font-family'] || 'inherit'};
-  flex: 1;
-  font-size: 4rem;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  font-weight: bold;
-  text-transform: uppercase;
-  position: sticky;
-  top: 10px; // margin from the top, adjust as required
-  bottom: 10px; // margin from the bottom, adjust as required
-  max-height: 80vh;
-  
-`;
-
 const VerticalButtonLeft = styled.button`
   writing-mode: vertical-rl; 
   text-orientation: upright; 
@@ -177,6 +139,7 @@ const VerticalButtonLeft = styled.button`
   border: none;
   margin-right: 1vw;
   color: ${props => props.color}; 
+  // color: #eba502;
   background: ${props => props.background};
   font-family: ${props => props['font-family'] || 'inherit'};
   flex: 1;
@@ -195,6 +158,7 @@ const VerticalButtonRight = styled.button`
   border: none;
   margin-left: 1vw;
   color: ${props => props.color};
+  // color: #eba502;
   background: ${props => props.background};
   font-family: ${props => props['font-family'] || 'inherit'};
   flex: 1;
@@ -203,5 +167,9 @@ const VerticalButtonRight = styled.button`
   top: 20px;
   bottom: 20px;
 `;
+
+const PageTopBorder = styled.div`
+border-top: 1vh solid ${props => props.color} ;
+`
 
 export default PortfolioContainer;
