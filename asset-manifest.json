@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Lewis-Brennan-Portfolio/static/css/main.713ba2bf.css",
-    "main.js": "/Lewis-Brennan-Portfolio/static/js/main.cc216664.js",
+    "main.css": "/Lewis-Brennan-Portfolio/static/css/main.fba566da.css",
+    "main.js": "/Lewis-Brennan-Portfolio/static/js/main.40622fe2.js",
     "static/js/787.1ed0c42c.chunk.js": "/Lewis-Brennan-Portfolio/static/js/787.1ed0c42c.chunk.js",
     "static/media/LilypadFrogsPage.png": "/Lewis-Brennan-Portfolio/static/media/LilypadFrogsPage.64249711a5ea165e2296.png",
     "static/media/LilypadHome.png": "/Lewis-Brennan-Portfolio/static/media/LilypadHome.8225e7b54eee1bee5e2b.png",
@@ -27,12 +27,12 @@
     "index.html": "/Lewis-Brennan-Portfolio/index.html",
     "static/media/square-youtube.svg": "/Lewis-Brennan-Portfolio/static/media/square-youtube.579b636177a2d70f7b28ee4f608fdbfe.svg",
     "static/media/linkedin.svg": "/Lewis-Brennan-Portfolio/static/media/linkedin.757885027fecebeb343266fa5ae768cd.svg",
-    "main.713ba2bf.css.map": "/Lewis-Brennan-Portfolio/static/css/main.713ba2bf.css.map",
-    "main.cc216664.js.map": "/Lewis-Brennan-Portfolio/static/js/main.cc216664.js.map",
+    "main.fba566da.css.map": "/Lewis-Brennan-Portfolio/static/css/main.fba566da.css.map",
+    "main.40622fe2.js.map": "/Lewis-Brennan-Portfolio/static/js/main.40622fe2.js.map",
     "787.1ed0c42c.chunk.js.map": "/Lewis-Brennan-Portfolio/static/js/787.1ed0c42c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.713ba2bf.css",
-    "static/js/main.cc216664.js"
+    "static/css/main.fba566da.css",
+    "static/js/main.40622fe2.js"
   ]
 }
