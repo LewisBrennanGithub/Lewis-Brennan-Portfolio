@@ -6,8 +6,10 @@ import github from '../../assets/icons/square-github.svg';
 const NavBar = () => {
   return ( 
 <NavigationBar>
-  <NavigationBarText>Lewis Brennan</NavigationBarText>
-  <NavigationBarText>Portfolio Page</NavigationBarText>
+  <NavigationBarTitleTextDiv >
+  <NavigationBarTitleText>Lewis Brennan</NavigationBarTitleText>
+  <NavigationBarTitleText>Portfolio Page</NavigationBarTitleText>
+  </NavigationBarTitleTextDiv >
   <div>
   <a href='https://www.linkedin.com/in/lewis-brennan-a59b1a78/' target="_blank"><img src={linkedin} alt="LinkedIn" style={{ width: "24px", height: "24px" }}/></a>
   <a href='https://github.com/LewisBrennanGithub' target="_blank"><img src={github} alt="Github" style={{ width: "24px", height: "24px" }}/></a>
@@ -26,22 +28,26 @@ const NavBar = () => {
 const NavigationBar = styled.div`
 height: 20vh;
 background: #f5f3f2;
-// border-bottom: 1vh solid #eba502;
 display: flex;
 align-items: center;
 justify-content: center;
 flex-direction: column;
 `
 
-const NavigationBarText = styled.h1`
+const NavigationBarTitleTextDiv = styled.div`
+margin-block: 1.5vh;
+`
+
+const NavigationBarTitleText = styled.h1`
 text-transform: uppercase;
 font-size: 4vh;
-margin-block: 0.5vh;
+margin-block: 0vh;
 `
 
 const NavigationLinks = styled.div`
 display: flex;
 gap: 15px;  
+padding-top: 1.5vh;
 `
 
 const StyledLink = styled(Link)`

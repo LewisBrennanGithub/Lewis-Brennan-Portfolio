@@ -1,5 +1,6 @@
 import '../../styles/GlobalStyles.css';
 import LBMugShot from '../../assets/images/LBMugShot.JPG';
+import styled from 'styled-components';
 
 const HomePage = () => {
     return ( 
@@ -7,7 +8,7 @@ const HomePage = () => {
       <h3 className='page-header-home'>Lewis Brennan - Qualified Junior Software Developer</h3>
       <div className='grid-container'>
       <div className='column-content'>
-      <img src={LBMugShot} alt='Lewis Brennan' style={{borderRadius:'50%', height:'50%'}}/>
+      <StyledImage src={LBMugShot} alt='Lewis Brennan'/>
         <p>Thanks for taking the time to visit my Portfolio website! I graduated from CodeClan in June 2023 having studied for a Professional Software Development certificate and also the SQA Level 8 Professional Development Award in Software Development.</p>
         <p>My professional background is in media monitoring after studying Politics and International Relations at the University of Aberdeen. Whilst working I always enjoyed problem solving and automation, attempting to provide technical solutions and workarounds to areas which previously required significant manual labour.</p>
         <p>Around this time I also started making my own modifications for computer games and this led to me using tools such as Blender and GIMP. My ability to learn these tools a general demystification of computer programming eventually led to me undertaking basic courses on Code Academy and FreeCodeCamp where I learned HTML, CSS and pre-ES6 vanilla JavaScript.</p>
@@ -20,5 +21,9 @@ const HomePage = () => {
       </>
      );
 }
+
+const StyledImage = styled.img`
+border-radius: 50%;
+`
  
 export default HomePage;

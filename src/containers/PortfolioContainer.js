@@ -102,7 +102,7 @@ const PortfolioContainer = () => {
 
 const Aligner = styled.div`
   display: flex;
-  min-height: 100vh; // Allow this container to expand to the height of its content.
+  min-height: 100vh;
 
   .left, .middle, .right {
     display: flex;
@@ -122,6 +122,12 @@ const Aligner = styled.div`
   .right{
     align-items: flex-start;
     flex: 1;
+  }
+
+  @media (max-width: 768px) {
+    .left, .right {
+      display: none;
+    }
   }
 `
 
